@@ -8,7 +8,7 @@ width=400
 height=600
 screen = pygame.display.set_mode((width,height))
   
-#load the images in dict
+
 images={}
 images["bg"] = pygame.image.load("bg.png").convert_alpha()
 images["base"] = pygame.image.load("base.png").convert_alpha()
@@ -40,11 +40,14 @@ class Pipe:
     def display(self):
         screen.blit(images["pipe"],self.topPipe)
         screen.blit(images["pipe"],self.bottomPipe)
-        #pygame.draw.rect(screen,(250,150,50),pygame.Rect(200,self.gap,100,100))
-    
+        
     def move(self):
         self.topPipe.x-=5
         self.bottomPipe.x-=5    
+        #Check if pipe moved out from left side and then reset pipe to the right side.
+        
+        
+           #set the "gap" to a random number and use it to set top and bottm pipes.
         
         
 bee=Bee()
@@ -76,8 +79,6 @@ while True:
    
     pygame.display.update()
     clock.tick(30) 
-    
-    
     
     
 
